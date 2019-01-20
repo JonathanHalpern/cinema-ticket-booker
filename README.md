@@ -1,6 +1,6 @@
-Coding exercise to build a movie ticket booker
+Web application to simulate booking a currently showing movie
 
-[Demo](https://cinema-ticket-booker.netlify.com/)
+[Live Demo](https://cinema-ticket-booker.netlify.com/)
 
 The Technologies used in this project are:
 
@@ -11,12 +11,6 @@ The Technologies used in this project are:
 - Theme: [Material Design](https://material-ui.com/)
 - APIs: [The movie DB](https://www.themoviedb.org/)
 - Code formatting: [Prettier](https://prettier.io/)
-
-## Environment Variables
-
-The API calls use a variable called REACT_APP_THE_MOVIE_DB_ACCESS_TOKEN
-You will need to register for an API key with [The movie DB](https://www.themoviedb.org/)
-Store the variable in a .env file to run locally
 
 ## Available Scripts
 
@@ -47,9 +41,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Points for improvement
 
-Use an Apollo server as middleware to themoviedb so that GraphQL can be used. This would allow more efficient queries.
+Use an Apollo server to expose a GraphQL API for the MovieDB. This would allow more efficient queries.
 
 Send a second query to the API to get the release_date object, which contains the movie certification.
-Use this to restrict 'child' ticket sales on movies with a rating 15 or 18.
+Use this to restrict 'child' ticket sales on movies with a rating 15+.
 
 Add a search bar to the top so that the user can filter which movies are shown.

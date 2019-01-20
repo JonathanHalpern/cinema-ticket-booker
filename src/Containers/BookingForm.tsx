@@ -30,7 +30,6 @@ const StlyedMedia = styled(CardMedia)`
 ` as typeof CardMedia
 
 const StlyedCardAction = styled(CardActions)`
-  justify-content: space-between;
   padding: 15px;
 ` as typeof CardActions
 
@@ -43,6 +42,10 @@ const Title = styled.h2`
   margin: 0;
   text-align: center;
   padding: 5px;
+`
+
+const Total = styled.p`
+  margin: 10px 0 0 0;
 `
 
 export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
@@ -97,10 +100,10 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
                 setValue={setConcessionNumber}
               />
             </FormInputs>
+            <Total>Total: £{totalPrice}</Total>
           </CardContent>
         </div>
         <StlyedCardAction>
-          <p>Total: £{totalPrice}</p>
           <Button variant="contained" disabled={disabled} onClick={onConfirm}>
             Confirm
           </Button>
