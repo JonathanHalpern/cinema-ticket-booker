@@ -60,8 +60,8 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
 
   const prices = {
     adultTicketPrice: 10,
-    childTicketPrice: 5,
-    concessionTicketPrice: 7.5,
+    childTicketPrice: 7.5,
+    concessionTicketPrice: 5,
   }
 
   const totalPrice =
@@ -87,12 +87,12 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
                 setValue={setAdultNumber}
               />
               <TicketInput
-                label="Child (£5)"
+                label="Child (£7.50)"
                 value={childNumber}
                 setValue={setChildNumber}
               />
               <TicketInput
-                label="Concession (£7.50)"
+                label="Concession (£5)"
                 value={concessionNumber}
                 setValue={setConcessionNumber}
               />
