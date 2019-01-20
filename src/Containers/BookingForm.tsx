@@ -8,6 +8,8 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 
+import { getTotalPrice } from '../Services/Prices'
+
 import TicketInput, { TicketValueType } from '../Components/TicketInput'
 
 export type BookingObjectType = {
@@ -30,6 +32,7 @@ const StlyedMedia = styled(CardMedia)`
 ` as typeof CardMedia
 
 const StlyedCardAction = styled(CardActions)`
+  display: block;
   padding: 15px;
 ` as typeof CardActions
 
@@ -48,6 +51,12 @@ const Total = styled.p`
   margin: 10px 0 0 0;
 `
 
+const Footnote = styled.p`
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 10px;
+`
+
 export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
   const [adultNumber, setAdultNumber] = useState<TicketValueType>('')
   const [childNumber, setChildNumber] = useState<TicketValueType>('')
@@ -61,16 +70,7 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
 
   const disabled = childNumber || adultNumber || concessionNumber ? false : true
 
-  const prices = {
-    adultTicketPrice: 10,
-    childTicketPrice: 7.5,
-    concessionTicketPrice: 5,
-  }
-
-  const totalPrice =
-    ((childNumber || 0) * prices.childTicketPrice || 0) +
-    ((adultNumber || 0) * prices.adultTicketPrice || 0) +
-    ((concessionNumber || 0) * prices.concessionTicketPrice || 0)
+  const totalPrice = getTotalPrice(adultNumber, childNumber, concessionNumber)
 
   const onCancel = useCallback(() => handleClose({ createBooking: false }), [])
 
@@ -90,7 +90,7 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
                 setValue={setAdultNumber}
               />
               <TicketInput
-                label="Child (£7.50)"
+                label="Child* (£7.50)"
                 value={childNumber}
                 setValue={setChildNumber}
               />
@@ -110,6 +110,7 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
           <Button variant="contained" color="secondary" onClick={onCancel}>
             Cancel
           </Button>
+          <Footnote>*Children aged 14 and under</Footnote>
         </StlyedCardAction>
       </StyledCard>
     </Dialog>
