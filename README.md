@@ -1,4 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Coding exercise to build a movie ticket booker
+
+[Demo](https://cinema-ticket-booker.netlify.com/)
+
+The Technologies used in this project are:
+
+- Language: [Typescript](https://www.typescriptlang.org/)
+- Framework: [React](https://reactjs.org/)
+- Template: [Create React App](https://github.com/facebook/create-react-app).
+- Styling: [Emotion](https://emotion.sh/)
+- Theme: [Material Design](https://material-ui.com/)
+- APIs: [The movie DB](https://www.themoviedb.org/)
+- Code formatting: [Prettier](https://prettier.io/)
+
+## Environment Variables
+
+The API calls use a variable called REACT_APP_THE_MOVIE_DB_ACCESS_TOKEN
+You will need to register for an API key with [The movie DB](https://www.themoviedb.org/)
+Store the variable in a .env file to run locally
 
 ## Available Scripts
 
@@ -27,42 +45,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Points for improvement
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Use an Apollo server as middleware to themoviedb so that GraphQL can be used. This would allow more efficient queries.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Send a second query to the API to get the release_date object, which contains the movie certification.
+Use this to restrict 'child' ticket sales on movies with a rating 15 or 18.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Add a search bar to the top so that the user can filter which movies are shown.
