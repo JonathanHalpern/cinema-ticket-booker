@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import TextField from '@material-ui/core/TextField'
-import { makeStringAPositiveInteger } from '../Services/Utils'
+import { makeStringAPositiveInteger } from '../Services/Utils/Utils'
 
 export type TicketValueType = number | ''
 

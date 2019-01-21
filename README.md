@@ -49,3 +49,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Add a search bar to the top so that the user can filter which movies are shown.
 
 - Use React Suspense to show a loading component while the API fetches data
+
+- Add Snapshot tests to components

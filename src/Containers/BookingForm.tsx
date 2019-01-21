@@ -8,7 +8,7 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 
-import { getTotalPrice } from '../Services/Prices'
+import { getTotalPrice } from '../Services/Prices/Prices'
 
 import TicketInput, { TicketValueType } from '../Components/TicketInput'
 
