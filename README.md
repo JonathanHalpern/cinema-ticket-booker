@@ -1,3 +1,5 @@
+## Cinema Ticket Booker
+
 Web application to simulate booking a currently showing movie
 
 [Live Demo](https://cinema-ticket-booker.netlify.com/)
@@ -14,8 +16,8 @@ The Technologies used in this project are:
 
 ## Running the project locally
 
-`git clone https://github.com/JonathanHalpern/cinema-ticket-booker`
-`cd ./cinema-ticket-booker`
+`git clone https://github.com/JonathanHalpern/cinema-ticket-booker`<br />
+`cd ./cinema-ticket-booker`<br />
 `npm i` or `yarn`
 
 ## Available Scripts
@@ -47,13 +49,15 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Points for improvement
 
-- Use an Apollo server to expose a GraphQL API for the MovieDB. This would allow more efficient queries.
+- Use an Apollo server to expose a GraphQL API for the MovieDB. This would allow more efficient queries
 
-- Send a second query to the API to get the release_date object, which contains the movie certification.
-  Use this to restrict 'child' ticket sales on movies with a rating 15+.
+- Send a second query to the API to get the release_date object, which contains the movie's certification.
+  Use this to restrict child ticket sales on movies with a rating 15+
 
-- Add a search bar to the top so that the user can filter which movies are shown.
+- Add a search bar to the top so that the user can filter which movies are shown
 
 - Use React Suspense to show a loading component while the API fetches data
 
 - Add Snapshot tests to components
+
+- Handle non-happy path with the API e.g. call quota exceeded
