@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import styled from '@emotion/styled'
 
-import Api from '../Services/Apis'
+import Api from '../Services/Apis/Apis'
 import Snackbar from '@material-ui/core/Snackbar'
 import Movie, { MovieType } from '../Components/Movie'
 import BookingForm, { BookingObjectType } from './BookingForm'

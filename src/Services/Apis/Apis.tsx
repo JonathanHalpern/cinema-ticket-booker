@@ -5,7 +5,7 @@ const ACCESS_TOKEN = process.env.REACT_APP_THE_MOVIE_DB_ACCESS_TOKEN
 
 const posterUrl = 'https://image.tmdb.org/t/p/w500'
 
-import { MovieType } from '../Components/Movie'
+import { MovieType } from '../../Components/Movie'
 
 const instance = axios.create({
   baseURL,
