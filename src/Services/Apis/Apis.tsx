@@ -19,6 +19,9 @@ const getNowPlaying = () =>
     .then(response => {
       if (response.status === 200) {
         return response.data.results
+      } else {
+        console.error('Invalid response')
+        // Outside the scope for this exercise
       }
     })
     .then(
@@ -30,6 +33,11 @@ const getNowPlaying = () =>
           backdrop_path: getPoster(result.backdrop_path),
         }))
     )
+    .catch(error => {
+      console.error('API call failed')
+      console.log(error)
+      // Outside the scope for this exercise
+    })
 
 export default {
   getNowPlaying,
