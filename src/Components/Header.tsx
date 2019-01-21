@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import styled from '@emotion/styled'
 import AppBar from '@material-ui/core/AppBar'
@@ -11,11 +11,8 @@ const StyledToolbar = styled(Toolbar)`
 
 const StyledLink = styled.a`
   color: inherit;
-  :selected {
-  }
 `
-
-export default () => (
+const Header: FC = () => (
   <AppBar position="static">
     <StyledToolbar>
       <h1>Ticket Booker</h1>
@@ -28,3 +25,5 @@ export default () => (
     </StyledToolbar>
   </AppBar>
 )
+
+export default Header

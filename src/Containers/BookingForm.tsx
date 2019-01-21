@@ -68,7 +68,7 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
     setConcessionNumber('')
   }
 
-  const disabled = childNumber || adultNumber || concessionNumber ? false : true
+  const disabled = !!(childNumber || adultNumber || concessionNumber)
 
   const totalPrice = getTotalPrice(adultNumber, childNumber, concessionNumber)
 

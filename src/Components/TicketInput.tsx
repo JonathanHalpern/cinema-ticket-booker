@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { FC, useCallback } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { makeStringAPositiveInteger } from '../Services/Utils/Utils'
 
@@ -10,7 +10,7 @@ type Props = {
   setValue: (_: TicketValueType) => void
 }
 
-export default ({ label, value, setValue }: Props) => {
+const TicketInput: FC<Props> = ({ label, value, setValue }: Props) => {
   const onChange = useCallback(e => {
     const newValue = makeStringAPositiveInteger(e.target.value)
     setValue(newValue)
@@ -26,3 +26,5 @@ export default ({ label, value, setValue }: Props) => {
     />
   )
 }
+
+export default TicketInput

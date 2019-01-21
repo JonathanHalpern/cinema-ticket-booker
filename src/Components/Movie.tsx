@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import LinesEllipsis from 'react-lines-ellipsis'
 
@@ -47,7 +47,13 @@ type Props = MovieType & {
   onClick: () => void
 }
 
-export default ({ title, poster_path, overview, className, onClick }: Props) => (
+const Movie: FC<Props> = ({
+  title,
+  poster_path,
+  overview,
+  className,
+  onClick,
+}: Props) => (
   <StyledCard className={className ? className : ''}>
     <CardActionArea onClick={onClick}>
       <Details>
@@ -68,3 +74,5 @@ export default ({ title, poster_path, overview, className, onClick }: Props) => 
     </CardActionArea>
   </StyledCard>
 )
+
+export default Movie
