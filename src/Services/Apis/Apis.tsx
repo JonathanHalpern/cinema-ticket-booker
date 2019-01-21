@@ -11,31 +11,30 @@ const instance = axios.create({
   baseURL,
 })
 
-const getPoster = (poster_path: string) => `${posterUrl}${poster_path}`
+const getPoster = (posterPath: string) => `${posterUrl}${posterPath}`
 
 const getNowPlaying = () =>
   instance
     .get(`movie/now_playing?api_key=${ACCESS_TOKEN}&language=en-US&page=1`)
-    .then(response => {
+    .then((response) => {
       if (response.status === 200) {
         return response.data.results
       } else {
-        console.error('Invalid response')
+        // Invalid response
         // Outside the scope for this exercise
       }
     })
     .then(
-      results =>
+      (results) =>
         results &&
         results.map((result: MovieType) => ({
           ...result,
-          poster_path: getPoster(result.poster_path),
           backdrop_path: getPoster(result.backdrop_path),
+          poster_path: getPoster(result.poster_path),
         }))
     )
-    .catch(error => {
-      console.error('API call failed')
-      console.log(error)
+    .catch((error) => {
+      // API call failed
       // Outside the scope for this exercise
     })
 

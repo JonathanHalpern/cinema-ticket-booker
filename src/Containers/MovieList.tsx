@@ -1,18 +1,20 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
+
 import styled from '@emotion/styled'
+import Snackbar from '@material-ui/core/Snackbar'
+
+import Movie, { MovieType } from '../Components/Movie'
 
 import Api from '../Services/Apis/Apis'
-import Snackbar from '@material-ui/core/Snackbar'
-import Movie, { MovieType } from '../Components/Movie'
 import BookingForm, { BookingObjectType } from './BookingForm'
 
 const initialMovieState = {
-  title: '',
-  poster_path: '',
   backdrop_path: '',
-  overview: '',
-  short_overview: '',
   id: 0,
+  overview: '',
+  poster_path: '',
+  short_overview: '',
+  title: '',
 }
 
 const BookingCreatedMessage = <span>Booking created</span>
@@ -34,14 +36,18 @@ export default () => {
 
   const closeBookingForm = ({ createBooking }: BookingObjectType) => {
     setDialogOpen(false)
-    createBooking && setSnackbarOpen(true)
+    if (createBooking) {
+      setSnackbarOpen(true)
+    }
   }
 
   const closeSnackBar = useCallback(() => setSnackbarOpen(false), [])
 
   useEffect(() => {
-    Api.getNowPlaying().then(results => {
-      results && setMovies(results)
+    Api.getNowPlaying().then((results) => {
+      if (results) {
+        setMovies(results)
+      }
     })
   }, [])
 
@@ -69,8 +75,8 @@ export default () => {
       )}
       <Snackbar
         anchorOrigin={{
-          vertical: 'bottom',
           horizontal: 'center',
+          vertical: 'bottom',
         }}
         open={isSnackbarOpen}
         autoHideDuration={2000}

@@ -3,12 +3,13 @@ import React, { FC } from 'react'
 import LinesEllipsis from 'react-lines-ellipsis'
 
 import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
-import CardActionArea from '@material-ui/core/CardActionArea'
+
+import styled from '@emotion/styled'
 
 import Typography from '@material-ui/core/Typography'
-import styled from '@emotion/styled'
 
 const StyledCard = styled(Card)`
   display: flex;
@@ -66,7 +67,7 @@ const Movie: FC<Props> = ({
             text={overview}
             maxLine="3"
             ellipsis="..."
-            trimRight
+            trimRight={true}
             basedOn="letters"
           />
         </StlyedContent>

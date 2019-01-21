@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import Dialog from '@material-ui/core/Dialog'
+
 import styled from '@emotion/styled'
 
 import Button from '@material-ui/core/Button'
@@ -7,6 +7,7 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
+import Dialog from '@material-ui/core/Dialog'
 
 import { getTotalPrice } from '../Services/Prices/Prices'
 
@@ -68,7 +69,7 @@ export default ({ isDialogOpen, title, backdrop_path, handleClose }: Props) => {
     setConcessionNumber('')
   }
 
-  const disabled = !!(childNumber || adultNumber || concessionNumber)
+  const disabled = !(childNumber || adultNumber || concessionNumber)
 
   const totalPrice = getTotalPrice(adultNumber, childNumber, concessionNumber)
 
